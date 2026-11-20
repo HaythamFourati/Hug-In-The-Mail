@@ -140,11 +140,11 @@ function render_table_of_contents() {
 }
 
 /**
- * Social share image: always assets/og-image.jpg (1200x630), on every page.
+ * Social share image: always assets/share-thumbnail.jpg (1200x630), on every page.
  * Overrides whatever Yoast would pick (featured image, first content image).
  */
 function hitm_force_share_image($presentation) {
-  $url = set_url_scheme(get_theme_file_uri('/assets/og-image.jpg'), 'https');
+  $url = set_url_scheme(get_theme_file_uri('/assets/share-thumbnail.jpg'), 'https');
   $presentation->open_graph_images = [$url => ['url' => $url, 'width' => 1200, 'height' => 630, 'type' => 'image/jpeg']];
   $presentation->twitter_image = $url;
   return $presentation;
